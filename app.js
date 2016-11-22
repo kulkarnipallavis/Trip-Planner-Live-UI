@@ -1,16 +1,16 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var swig = require('swig');
+var nunjucks = require('nunjucks');
 
 var db = require('./models');
 
 var app = express();
 
 // swig rendering boilerplate
-app.set('views', __dirname + '/views');
+nunjucks.configure('views', {noCache : true}); 
 app.set('view engine', 'html');
-app.engine('html', swig.renderFile);
+app.engine('html', nunjucks.render);
 
 // logging and body-parsing
 app.use(morgan('dev'));
@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // statically serve front-end dependencies
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+
 
 // serve any other static files
 app.use(express.static(__dirname + '/public'));

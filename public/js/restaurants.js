@@ -18,13 +18,5 @@ $( document ).ready(function() {
       $('#restaurant-itinerary').append($remove);
   	});
 	
-  $('#day-add').on('click', function(e){
-      console.log("add day clicked");
-      const $parentDiv = $(this).parent();
-      const $newButton = $('<button class="btn btn-circle day-btn"></button>');
-      $newButton.text(1);
-      $parentDiv.prepend($newButton);
-  });
-  	
 });
 

@@ -18,21 +18,30 @@ $( document ).ready(function() {
   		$('#hotel-itinerary').append($remove);
   	});
 	
-	$('button').on('click', function(e){
-		console.log("remove hotel clicked");
-		const $remove = $(this);
-		console.log("$remove",$remove, $(this).id);
-        // const value = $remove.val();
+	// $('button').on('click', function(e){
+	// 	console.log("remove hotel clicked");
+	// 	const $remove = $(this);
+	// 	console.log("$remove",$remove, $(this).id);
+ //        // const value = $remove.val();
         
-        const $parentDiv = $remove.parent();
-        console.log("$parentDiv"+$parentDiv);
-        const $spanToRemove = $remove.siblings('span');
-        const elementIndex = $parentDiv.index();
-        console.log("$spanToRemove",$spanToRemove);
-        $spanToRemove.remove();
+ //        const $parentDiv = $remove.parent();
+ //        console.log("$parentDiv"+$parentDiv);
+ //        const $spanToRemove = $remove.siblings('span');
+ //        const elementIndex = $parentDiv.index();
+ //        console.log("$spanToRemove",$spanToRemove);
+ //        $spanToRemove.remove();
         
        
-	});
+	// });
+  	
+  	
+  $('#day-add').on('click', function(e){
+      console.log("add day clicked");
+      const $parentDiv = $(this).parent();
+      const $newButton = $('<button class="btn btn-circle day-btn"></button>');
+      $newButton.text(1);
+      $parentDiv.prepend($newButton);
+  });
   	
 });
 
