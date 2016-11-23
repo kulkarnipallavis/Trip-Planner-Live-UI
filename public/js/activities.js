@@ -1,16 +1,10 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
     let $selectedActivity;
     $('#activity-choices').on('change', function(e){
-  		console.log("select on change ");
-		  $selectedActivity = $('#activity-choices').val();
-      	console.log("$selectedActivity",$('#activity-choices').val());
-      	console.log($selectedActivity);
-      
+		      $selectedActivity = $('#activity-choices').val();
   	});
 
 	$('#add-activity').on('click', function(e){
-		console.log("in add");
   		const $spanToAdd = $('<span class="title"></span>');
   		$spanToAdd.text($selectedActivity);
   		$('#activity-itinerary').append($spanToAdd);

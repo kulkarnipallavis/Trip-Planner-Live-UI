@@ -17,7 +17,7 @@
             <h4>Hotels</h4>
             <select data-type="hotel" id="hotel-choices">
             {% for hotel in hotels%}
-              <option value="{{hotel.name}}">{{hotel.name}}</option> 
+              <option value="{{hotel.id}}">{{hotel.name}}</option> 
             {% endfor %}
             </select>
             <button id="add-hotel" data-action="add" class="btn btn-primary btn-circle pull-right">+</button>
