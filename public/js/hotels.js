@@ -8,7 +8,7 @@ $( document ).ready(function() {
     console.log(hotels);
     $('#hotel-choices').on('change', function(e){
 		$selectedHotelIndex = $('#hotel-choices').val()-1;
-		// $selectedHotel = $('#hotel-choices').text();
+		$selectedHotel = hotels[$selectedHotelIndex].name;
 		console.log("$selectedHotelIndex ",$selectedHotelIndex );
 		const coords = hotels[$selectedHotelIndex].place.location;
 		console.log("$('#hotel-choices').val()", coords);
